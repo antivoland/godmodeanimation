@@ -1,0 +1,16 @@
+argparse
+decord
+importlib-metadata
+numpy
+omegaconf
+opencv-python
+packaging
+pandas
+pillow
+pytorch-lightning
+test-tube
+torch
+torchvision
+tqdm
+transformers
+wandb
