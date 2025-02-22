@@ -233,6 +233,9 @@ if __name__ == "__main__":
                 trainer_config["accelerator"] = "ddp"
             print('Set DDP mode')
 
+#             trainer_config["accelerator"] = "cpu"
+#             trainer_config["devices"] = 1
+
         for k in nondefault_trainer_args(opt):
             trainer_config[k] = getattr(opt, k)
         
@@ -244,6 +247,7 @@ if __name__ == "__main__":
             print(f"Running on GPUs {gpuinfo}")
             cpu = False
 
+        print(f"trainer_config: {trainer_config}")
         trainer_opt = argparse.Namespace(**trainer_config)
         lightning_config.trainer = trainer_config
 
@@ -434,6 +438,13 @@ if __name__ == "__main__":
             find_unused_parameters=lightning_config.get("find_unused_parameters", False)
             trainer_kwargs["plugins"] = DDPPlugin(find_unused_parameters=find_unused_parameters)
 
+#         trainer_kwargs["accelerator"] = 'cpu'
+
+#         del trainer_kwargs["accelerator"]
+#         del trainer_kwargs["devices"]
+#         del trainer_kwargs["gpus"]
+
+        print(f"trainer_kwargs: {trainer_kwargs}")
         trainer = Trainer.from_argparse_args(trainer_opt, **trainer_kwargs)
         trainer.logdir = logdir
 

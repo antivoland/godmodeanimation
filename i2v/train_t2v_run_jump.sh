@@ -1,16 +1,17 @@
 
-PROJ_ROOT="/root/animation_training/src/video_crafter"                      # root directory for saving experiment logs
+PROJ_ROOT="./logs"                      # root directory for saving experiment logs
 EXPNAME="vc_mergedsrunjump_weap_origvc2"          # experiment name
-TRAIN_DATADIR="/root/ucf_ds/train"  # dataset directory
-VAL_DATADIR="/root/ucf_ds/val"  # dataset directory
-DATADIR="/root/ucf_ds"  # dataset directory
+#TRAIN_DATADIR="/root/ucf_ds/train"  # dataset directory
+#VAL_DATADIR="/root/ucf_ds/val"  # dataset directory
+DATADIR="./data"  # dataset directory
 #AEPATH="/root/vc2/ae/ae_sky.ckpt"    # pretrained video autoencoder checkpoint
 
-CONFIG="configs/train_t2v_sample_cb_less_val.yaml"
+#CONFIG="./configs/train_t2v_sample_cb_less_val.yaml"
+CONFIG="./configs/train_t2v.yaml"
 # CONFIG="configs/lvdm_short/sky.yaml"
 # OR CONFIG="configs/videoae/ucf.yaml"
 # OR CONFIG="configs/videoae/taichi.yaml"
-ckpt='/root/vc2/model.ckpt'
+ckpt='../godmodeanimation_vc2_runjump_ep34.ckpt'
 
 # run
 export TOKENIZERS_PARALLELISM=false

@@ -1,5 +1,5 @@
 argparse
-decord
+#decord
 importlib-metadata
 numpy
 omegaconf
@@ -7,7 +7,7 @@ opencv-python
 packaging
 pandas
 pillow
-pytorch-lightning
+pytorch-lightning==1.9.5
 test-tube
 torch
 torchvision

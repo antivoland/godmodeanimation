@@ -1,4 +1,6 @@
 import os, sys, glob
+sys.path.insert(1, 'decord/python')
+
 import numpy as np
 from collections import OrderedDict
 from decord import VideoReader, cpu
